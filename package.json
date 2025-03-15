@@ -1,0 +1,65 @@
+{
+  "name": "launchkit-cli",
+  "version": "1.0.0",
+  "description": "A unified CLI tool for creating projects with various frameworks and templates",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "launchkit": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "depcheck": "depcheck --ignores=\"@types/jest,ts-jest,jest\"",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "cli",
+    "project-generator",
+    "expo",
+    "next",
+    "electron",
+    "vite",
+    "react-router",
+    "express",
+    "nestjs",
+    "angular",
+    "svelte",
+    "blitz"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRealPerson98/LaunchKit-CLI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheRealPerson98/LaunchKit-CLI/issues"
+  },
+  "homepage": "https://github.com/TheRealPerson98/LaunchKit-CLI#readme",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.22.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.10",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "depcheck": "^1.4.7",
+    "eslint": "^9.22.0",
+    "globals": "^16.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^12.5.0"
+  }
+}
