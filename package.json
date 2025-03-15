@@ -1,5 +1,5 @@
 {
-  "name": "launchkit-cli",
+  "name": "project-launchkit",
   "version": "1.0.0",
   "description": "A unified CLI tool for creating projects with various frameworks and templates",
   "main": "dist/index.js",

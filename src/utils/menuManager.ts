@@ -48,7 +48,7 @@ export class MenuManager {
     console.clear();
     const title = `
 ${chalk.cyan('╭───────────────────────────────────────────────────────────╮')}
-${chalk.cyan('│')}      ${chalk.bold.cyan('🚀 LaunchKit CLI')}  ${chalk.cyan('|')}  ${chalk.bold.white('Modern Project Scaffolding')}  ${chalk.cyan('    │')}
+${chalk.cyan('│')}   ${chalk.bold.cyan('🚀 Project LaunchKit')}  ${chalk.cyan(' |')}  ${chalk.bold.white('Modern Project Scaffolding')}  ${chalk.cyan('  │')}
 ${chalk.cyan('╰───────────────────────────────────────────────────────────╯')}
 
 ${chalk.gray('Create new projects with popular frameworks and templates')}

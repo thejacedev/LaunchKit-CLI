@@ -1,14 +1,14 @@
-# LaunchKit-CLI
+# Project LaunchKit
 
 [![GitHub license](https://img.shields.io/github/license/TheRealPerson98/LaunchKit-CLI)](https://github.com/TheRealPerson98/LaunchKit-CLI/blob/main/LICENSE)
-[![npm version](https://img.shields.io/npm/v/launchkit-cli)](https://www.npmjs.com/package/launchkit-cli)
+[![npm version](https://img.shields.io/npm/v/project-launchkit)](https://www.npmjs.com/package/project-launchkit)
 [![CI](https://github.com/TheRealPerson98/LaunchKit-CLI/workflows/CI/badge.svg)](https://github.com/TheRealPerson98/LaunchKit-CLI/actions)
 
 
 An interactive CLI tool for quickly creating new projects with various frameworks and templates.
 
 <p align="center">
-  <img src="assets/main.png" alt="LaunchKit CLI Main Screen" width="700">
+  <img src="assets/main.png" alt="Project LaunchKit Main Screen" width="700">
 </p>
 
 ## Screenshots
@@ -39,10 +39,10 @@ An interactive CLI tool for quickly creating new projects with various framework
 
 ```bash
 # Global installation
-npm install -g launchkit-cli
+npm install -g project-launchkit
 
 # Or run directly with npx
-npx launchkit-cli
+npx project-launchkit
 ```
 
 ## Usage
@@ -52,7 +52,7 @@ npx launchkit-cli
 launchkit
 
 # Or with npx
-npx launchkit-cli
+npx project-launchkit
 ```
 
 ## Supported Templates
