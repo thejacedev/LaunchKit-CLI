@@ -35,7 +35,7 @@ export class MenuManager {
 
     if (isSubmenu) {
       choices.unshift({
-        name: chalk.yellow('↩ Back to main menu'),
+        name: chalk.yellow('↩ Back to previous menu'),
         value: 'BACK',
         short: 'Back'
       });
@@ -47,9 +47,13 @@ export class MenuManager {
   private renderHeader(): void {
     console.clear();
     const title = `
-╭───────────────────────────────────╮
-│  ${chalk.cyan.bold('LaunchKit CLI - Project Creator')}  │
-╰───────────────────────────────────╯\n`;
+${chalk.cyan('╭───────────────────────────────────────────────────────────╮')}
+${chalk.cyan('│')}      ${chalk.bold.cyan('🚀 LaunchKit CLI')}  ${chalk.cyan('|')}  ${chalk.bold.white('Modern Project Scaffolding')}  ${chalk.cyan('    │')}
+${chalk.cyan('╰───────────────────────────────────────────────────────────╯')}
+
+${chalk.gray('Create new projects with popular frameworks and templates')}
+${chalk.gray('─────────────────────────────────────────────────────────────')}
+`;
     console.log(title);
   }
 
@@ -59,9 +63,9 @@ export class MenuManager {
     const { choice } = await inquirer.prompt({
       type: 'list',
       name: 'choice',
-      message: chalk.cyan.bold(`🚀 ${message}`),
+      message: chalk.cyan.bold(`${message}`),
       choices: this.createMenuChoices(items, isSubmenu, prefix),
-      pageSize: 8,
+      pageSize: 20,
       loop: false
     });
 
@@ -70,32 +74,58 @@ export class MenuManager {
 
   public async display(): Promise<void> {
     try {
+      let currentMenu = this.mainMenu;
+      let currentMessage = '📦 Select a category:';
+      let currentPrefix = '';
+      const menuStack: { menu: MenuItem[], message: string, prefix: string }[] = [];
+      
       while (true) {
-        const mainChoice = await this.showMenu(this.mainMenu, '📦 Select a framework:');
+        const choice = await this.showMenu(
+          currentMenu, 
+          currentMessage, 
+          menuStack.length > 0, 
+          currentPrefix
+        );
         
-        if (!mainChoice) break;
-        
-        const mainItem = this.mainMenu[parseInt(mainChoice)];
-        
-        if (mainItem.subMenu) {
-          const subChoice = await this.showMenu(
-            mainItem.subMenu, 
-            `🛠️  Select ${chalk.cyan(mainItem.title)} template:`,
-            true,
-            `${mainChoice}-`
-          );
+        if (!choice) {
+          if (menuStack.length === 0) break;
           
-          if (subChoice) {
-            this.renderHeader();
-            console.log(chalk.gray('\n  Initializing project...\n'));
-            const action = this.actionMap.get(subChoice);
-            if (action) {
-              await action();
-            } else {
-              throw new Error('Action not found for the selected menu item');
-            }
-            break;
+          // Go back to previous menu
+          const previousMenu = menuStack.pop();
+          if (previousMenu) {
+            currentMenu = previousMenu.menu;
+            currentMessage = previousMenu.message;
+            currentPrefix = previousMenu.prefix;
           }
+          continue;
+        }
+        
+        const index = parseInt(choice.split('-').pop() || '0');
+        const selectedItem = currentMenu[index];
+        
+        if (selectedItem.subMenu) {
+          // Save current menu state
+          menuStack.push({
+            menu: currentMenu,
+            message: currentMessage,
+            prefix: currentPrefix
+          });
+          
+          // Navigate to submenu
+          currentMenu = selectedItem.subMenu;
+          currentMessage = `🛠️  Select ${chalk.cyan(selectedItem.title)}:`;
+          currentPrefix = `${choice}-`;
+        } else {
+          // Execute action for the selected item
+          this.renderHeader();
+          console.log(chalk.gray('\n  Initializing project...\n'));
+          const action = this.actionMap.get(choice);
+          if (action) {
+            await action();
+          } else {
+            throw new Error('Action not found for the selected menu item');
+          }
+          break;
         }
       }
     } catch (error) {

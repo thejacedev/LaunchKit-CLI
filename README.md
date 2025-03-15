@@ -8,7 +8,17 @@
 An interactive CLI tool for quickly creating new projects with various frameworks and templates.
 
 <p align="center">
-  <img src="assets/demo.gif" alt="LaunchKit CLI Demo" width="600">
+  <img src="assets/main.png" alt="LaunchKit CLI Main Screen" width="700">
+</p>
+
+## Screenshots
+
+<p align="center">
+  <img src="assets/sub1.png" alt="Category Selection" width="600">
+  <br><br>
+  <img src="assets/sub2.png" alt="Framework Selection" width="600">
+  <br><br>
+  <img src="assets/sub3.png" alt="Template Selection" width="600">
 </p>
 
 ## Features

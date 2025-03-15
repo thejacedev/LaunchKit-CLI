@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { MenuManager } from './utils/menuManager';
 import { expoTemplates } from './config/expoTemplates';
 import { nextTemplates } from './config/nextTemplates';
@@ -131,24 +133,13 @@ export async function main(): Promise<void> {
     }
   }));
 
-  const mainMenu: MenuItem[] = [
-    {
-      title: 'Expo',
-      description: 'Create a new Expo project with various templates',
-      action: async (): Promise<void> => {},
-      subMenu: expoMenuItems
-    },
+  // Frontend frameworks submenu
+  const frontendMenu: MenuItem[] = [
     {
       title: 'Next.js',
       description: 'Create a new Next.js project',
       action: async (): Promise<void> => {},
       subMenu: nextMenuItems
-    },
-    {
-      title: 'Electron',
-      description: 'Create a new Electron desktop application',
-      action: async (): Promise<void> => {},
-      subMenu: electronMenuItems
     },
     {
       title: 'Vite',
@@ -161,18 +152,6 @@ export async function main(): Promise<void> {
       description: 'Create a new React Router project',
       action: async (): Promise<void> => {},
       subMenu: reactRouterMenuItems
-    },
-    {
-      title: 'Express',
-      description: 'Create a new Express.js project with various view engines and CSS preprocessors',
-      action: async (): Promise<void> => {},
-      subMenu: expressMenuItems
-    },
-    {
-      title: 'Nest.js',
-      description: 'Create a new Nest.js project with TypeScript and various configuration options',
-      action: async (): Promise<void> => {},
-      subMenu: nestMenuItems
     },
     {
       title: 'Angular',
@@ -191,6 +170,60 @@ export async function main(): Promise<void> {
       description: 'Create a new Blitz.js project - The Fullstack React Framework',
       action: async (): Promise<void> => {},
       subMenu: blitzMenuItems
+    }
+  ];
+
+  // Backend frameworks submenu
+  const backendMenu: MenuItem[] = [
+    {
+      title: 'Express',
+      description: 'Create a new Express.js project with various view engines and CSS preprocessors',
+      action: async (): Promise<void> => {},
+      subMenu: expressMenuItems
+    },
+    {
+      title: 'Nest.js',
+      description: 'Create a new Nest.js project with TypeScript and various configuration options',
+      action: async (): Promise<void> => {},
+      subMenu: nestMenuItems
+    }
+  ];
+
+  // Apps submenu
+  const appsMenu: MenuItem[] = [
+    {
+      title: 'Expo',
+      description: 'Create a new Expo project with various templates',
+      action: async (): Promise<void> => {},
+      subMenu: expoMenuItems
+    },
+    {
+      title: 'Electron',
+      description: 'Create a new Electron desktop application',
+      action: async (): Promise<void> => {},
+      subMenu: electronMenuItems
+    }
+  ];
+
+  // Main categories menu
+  const mainMenu: MenuItem[] = [
+    {
+      title: 'Frontend Frameworks',
+      description: 'Web frontend frameworks and libraries',
+      action: async (): Promise<void> => {},
+      subMenu: frontendMenu
+    },
+    {
+      title: 'Backend Frameworks',
+      description: 'Server-side and API frameworks',
+      action: async (): Promise<void> => {},
+      subMenu: backendMenu
+    },
+    {
+      title: 'Applications',
+      description: 'Mobile and desktop application frameworks',
+      action: async (): Promise<void> => {},
+      subMenu: appsMenu
     }
   ];
 
