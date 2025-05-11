@@ -1,6 +1,6 @@
 {
   "name": "project-launchkit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A unified CLI tool for creating projects with various frameworks and templates",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,12 +37,12 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TheRealPerson98/LaunchKit-CLI.git"
+    "url": "git+https://github.com/thejacedev/LaunchKit-CLI.git"
   },
   "bugs": {
-    "url": "https://github.com/TheRealPerson98/LaunchKit-CLI/issues"
+    "url": "https://github.com/thejacedev/LaunchKit-CLI/issues"
   },
-  "homepage": "https://github.com/TheRealPerson98/LaunchKit-CLI#readme",
+  "homepage": "https://github.com/thejacedev/LaunchKit-CLI#readme",
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.22.0",

@@ -2,12 +2,12 @@
 
 <div align="center">
   
-[![GitHub license](https://img.shields.io/github/license/TheRealPerson98/LaunchKit-CLI)](https://github.com/TheRealPerson98/LaunchKit-CLI/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/thejacedev/LaunchKit-CLI)](https://github.com/thejacedev/LaunchKit-CLI/blob/main/LICENSE)
 [![npm version](https://img.shields.io/npm/v/project-launchkit)](https://www.npmjs.com/package/project-launchkit)
-[![CI](https://github.com/TheRealPerson98/LaunchKit-CLI/workflows/CI/badge.svg)](https://github.com/TheRealPerson98/LaunchKit-CLI/actions)
-[![GitHub issues](https://img.shields.io/github/issues/TheRealPerson98/LaunchKit-CLI)](https://github.com/TheRealPerson98/LaunchKit-CLI/issues)
-[![GitHub stars](https://img.shields.io/github/stars/TheRealPerson98/LaunchKit-CLI)](https://github.com/TheRealPerson98/LaunchKit-CLI/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/TheRealPerson98/LaunchKit-CLI)](https://github.com/TheRealPerson98/LaunchKit-CLI/network)
+[![CI](https://github.com/thejacedev/LaunchKit-CLI/workflows/CI/badge.svg)](https://github.com/thejacedev/LaunchKit-CLI/actions)
+[![GitHub issues](https://img.shields.io/github/issues/thejacedev/LaunchKit-CLI)](https://github.com/thejacedev/LaunchKit-CLI/issues)
+[![GitHub stars](https://img.shields.io/github/stars/thejacedev/LaunchKit-CLI)](https://github.com/thejacedev/LaunchKit-CLI/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/thejacedev/LaunchKit-CLI)](https://github.com/thejacedev/LaunchKit-CLI/network)
 
 </div>
 
@@ -200,7 +200,7 @@ npx project-launchkit
 
 ```bash
 # Clone the repository
-git clone https://github.com/TheRealPerson98/LaunchKit-CLI.git
+git clone https://github.com/thejacedev/LaunchKit-CLI.git
 cd LaunchKit-CLI
 
 # Install dependencies
@@ -321,5 +321,5 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 <hr />
 
 <div align="center">
-  <sub>Built with ❤️ by <a href="https://github.com/TheRealPerson98">TheRealPerson98</a></sub>
+  <sub>Built with ❤️ by <a href="https://github.com/thejacedev">thejacedev</a></sub>
 </div> 
